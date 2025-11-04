@@ -3,23 +3,11 @@ const contentList = document.getElementById("lista");
 const contentButton = document.getElementById("agregar");
 
 contentButton.addEventListener("click", () => {
-    let elementType = prompt("Introduce un tipo de elemento para insertar.");
-    if (!elementType) elementType = "";
-
-    const elementCreated = elementType ? document.createElement(elementType) : null;
+    const text = prompt("Introduce un texto a insertar.");
     
-    if (!elementCreated || elementCreated instanceof HTMLUnknownElement) {
-        if (elementCreated) elementCreated.remove();
-        alert(`El tipo de elemento '${elementType}' no es un tipo de HTML válido y no se ha añadido a la lista.`);
-    }
-    else {
-        const container = document.createElement("div");
-        const banner = document.createElement("p");
-
-        banner.textContent = `${elementType} ==>`;
-
-        container.appendChild(banner);
-        container.appendChild(elementCreated);
-        contentList.appendChild(container);
+    if (text) {
+        const textCtn = document.createElement("li")
+        textCtn.textContent = text;
+        contentList.appendChild(textCtn)
     }
 });

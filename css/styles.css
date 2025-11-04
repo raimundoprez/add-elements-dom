@@ -1,44 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-h1:first-of-type {
+:root {
+    --mainFont: "Roboto";
+    --titleSize: 30px;
+    --textSize: 20px;
+    --titleBackColor: rgb(176, 213, 224);
+    --buttonFocusColor: rgb(108, 216, 182);
+}
+
+h1 {
     display: inline-block;
     margin: 0px;
     padding: 15px;
-    font-family: "Roboto";
-    background-color: rgb(207, 221, 225);
+    font-family: var(--mainFont);
+    font-size: var(--titleSize);
+    background-color: var(--titleBackColor);
 }
 
-ul:first-of-type {
-    border: 5px solid black;
-    min-height: 100px;
+ul {
+    border: 3px solid black;
     padding: 10px;
+    list-style-type: none;
 }
 
-button:last-of-type {
+ul > li {
+    margin-bottom: 10px;
+    font-family: var(--mainFont);
+    font-size: var(--textSize);
+    overflow: hidden;
+}
+
+ul > li:last-child {
+    margin-bottom: 0px;
+}
+
+button {
     border-style: none;
     padding: 10px;
-    font-family: "Roboto";
-    font-size: 20px;
-    background-color: rgb(146, 197, 223);
+    font-family: var(--mainFont);
+    font-size: var(--textSize);
+    background-color: var(--titleBackColor);
 }
 
-button:last-of-type:hover {
-    background-color: rgb(55, 198, 174);
-}
-
-ul:first-of-type > div {
-    margin: 0px 0px 10px 0px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
-}
-
-ul:first-of-type > div:last-child {
-    margin: 0px;
-}
-
-ul:first-of-type > div > p:first-child {
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 20px;
+button:hover {
+    background-color: var(--buttonFocusColor);
 }
